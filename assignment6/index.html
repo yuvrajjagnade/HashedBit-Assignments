@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            padding: 24px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        input, button {
+            font-size: 18px;
+            padding: 10px 12px;
+        }
+
+        #summary {
+            font-size: 20px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        #taskList {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Todo List</h2>
+
+<input type="text" id="taskInput" placeholder="Enter a task">
+<button id="addBtn">Add</button>
+<button id="clearBtn">Clear All</button>
+
+<p id="summary">Total: 0 | Completed: 0</p>
+
+<ul id="taskList"></ul>
+
+<script src="script.js"></script>
+</body>
+</html>

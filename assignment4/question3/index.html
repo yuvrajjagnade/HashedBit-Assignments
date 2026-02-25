@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Visibility Task</title>
+    <style>
+    
+        #useless-paragraph {
+            padding: 10px;
+            background-color: #f3f4f6;
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <h1>I am a headline made with HTML</h1>
+    <br />
+    
+    <p id="useless-paragraph">Useless Paragraph.</p>
+    
+    <br />
+    
+    <button onclick="toggleVisibility()">Toggle Button</button>
+
+    <script>
+        
+        function toggleVisibility() {
+            const para = document.getElementById('useless-paragraph');
+
+            if (para.style.display === "none") {
+                para.style.display = "block";
+            } else {
+                para.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

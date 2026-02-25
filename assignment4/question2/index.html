@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Creator</title>
+    <style>
+        #container {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            min-height: 100px;
+        }
+        
+        #container div {
+            background-color: #223fb395;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DOM Manipulation: Create Div</h1>
+    
+    <button onclick="createDiv(200, 50, 'New Div')">
+        Add a 200x50 Div
+    </button>
+
+    <div id="container">
+        </div>
+
+    <script>
+        function createDiv(width, height, text) {
+            const container = document.getElementById('container');
+
+            const newDiv = document.createElement('div');
+
+            newDiv.textContent = text;
+
+            newDiv.style.width = width + "px";
+            newDiv.style.height = height + "px";
+
+            container.appendChild(newDiv);
+        }
+    </script>
+
+</body>
+</html>

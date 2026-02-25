@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Cart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-block">
+      <p class="eyebrow">EST. 2026</p>
+      <h1>NOVA CART</h1>
+    </div>
+
+    <nav class="main-nav">
+      <a href="#">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-btn" id="cartBtn" aria-label="Cart">
+      Cart <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">NEW DROP</p>
+      <h2>Everyday products with a premium edge.</h2>
+      <p>Explore latest fashion, gadgets, and home essentials curated for 2026.</p>
+      <a class="hero-cta" href="#products">Shop Collection</a>
+    </div>
+    <div class="hero-card">
+      <p>Live Offer</p>
+      <h3 id="offerTitle">Weekend Deal: 20% OFF</h3>
+      <small id="offerText">On selected tech and accessories</small>
+    </div>
+  </section>
+
+  <main id="products" class="products-section">
+    <div class="toolbar">
+      <input id="searchInput" type="text" placeholder="Search products...">
+
+      <div class="chips" id="categoryChips">
+        <button class="chip chip-active" data-category="All">All</button>
+        <button class="chip" data-category="Fashion">Fashion</button>
+        <button class="chip" data-category="Tech">Tech</button>
+        <button class="chip" data-category="Home">Home</button>
+      </div>
+
+      <select id="sortSelect">
+        <option value="featured">Sort: Featured</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+        <option value="rating">Rating: High to Low</option>
+      </select>
+    </div>
+
+    <div id="productGrid" class="product-grid"></div>
+    <p id="resultText" class="result-text"></p>
+  </main>
+
+  <section id="about" class="about-strip">
+    <div>
+      <h3>Fast Delivery</h3>
+      <p>Shipping in 2-4 days across major cities.</p>
+    </div>
+    <div>
+      <h3>Easy Returns</h3>
+      <p>7-day return policy on all products.</p>
+    </div>
+    <div>
+      <h3>Secure Checkout</h3>
+      <p>Protected payment with trusted gateways.</p>
+    </div>
+  </section>
+
+  <footer id="contact" class="site-footer">
+    <p>© 2026 Nova Cart</p>
+    <button id="themeToggle" class="theme-toggle">Toggle Theme</button>
+  </footer>
+
+  <div class="modal hidden" id="quickViewModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="close-btn" id="closeModal">✕</button>
+      <img id="modalImage" src="" alt="Product image">
+      <h3 id="modalTitle"></h3>
+      <p id="modalCategory"></p>
+      <p id="modalPrice"></p>
+      <p id="modalDescription"></p>
+      <button id="modalAddToCart">Add to Cart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
