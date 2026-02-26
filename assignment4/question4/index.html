@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Styler Lab</title>
+    <style>
+        .text-here {
+            font-size: 55px;
+            font-family: sans-serif;
+            color: black;
+            text-decoration: none;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            text-align: left;
+            letter-spacing: normal;
+            word-spacing: normal;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .stylebt {
+            margin-right: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class='text-here' id='text-container'>This is some example text</div>
+
+    <input type="text" id="colorbox" placeholder="Enter color (e.g. red)">
+    <button id="colorchange">Change Colour</button>
+    <br><br>
+
+    <label for="fontsize">Font Size:</label>
+    <input type="range" id="fontsize" min="10" max="100" value="55">
+    <br><br>
+
+    <button id="italic" class="stylebt">Italics</button>
+    <button id="underline" class="stylebt">Underline</button>
+    <button id="bold" class="stylebt">Bold</button>
+    <br><br>
+
+    <select id="list">
+        <option value="serif">Serif</option>
+        <option value="sans-serif" selected>Sans-Serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="cursive">Cursive</option>
+        <option value="fantasy">Fantasy</option>
+    </select>
+    <br><br>
+
+    <button id="getstyle">Get CSS</button>
+    <br><br>
+    <p id="css-props"></p>
+
+    <script>
+        const textContainer = document.getElementById('text-container');
+
+        document.getElementById('colorchange').addEventListener('click', () => {
+            const colorValue = document.getElementById('colorbox').value;
+            textContainer.style.color = colorValue;
+        });
+
+        document.getElementById('fontsize').addEventListener('input', (e) => {
+            textContainer.style.fontSize = e.target.value + "px";
+        });
+
+        document.getElementById('italic').addEventListener('click', () => {
+            textContainer.style.fontStyle = (textContainer.style.fontStyle === "italic") ? "normal" : "italic";
+        });
+
+        document.getElementById('underline').addEventListener('click', () => {
+            textContainer.style.textDecoration = (textContainer.style.textDecoration === "underline") ? "none" : "underline";
+        });
+
+        document.getElementById('bold').addEventListener('click', () => {
+            textContainer.style.fontWeight = (textContainer.style.fontWeight === "bold" || textContainer.style.fontWeight === "700") ? "normal" : "bold";
+        });
+
+
+        document.getElementById('list').addEventListener('change', (e) => {
+            textContainer.style.fontFamily = e.target.value;
+        });
+
+        document.getElementById('getstyle').addEventListener('click', () => {
+            const style = textContainer.style;
+            const cssDisplay = document.getElementById('css-props');
+
+            const color = style.color || "black";
+            const fSize = style.fontSize || "55px";
+            const fFamily = style.fontFamily || "sans-serif";
+            const fStyle = style.fontStyle || "normal";
+            const fWeight = style.fontWeight || "normal";
+            const tDec = style.textDecoration || "none";
+
+            cssDisplay.textContent = `color: ${color}; font-size: ${fSize}; font-family: ${fFamily}; font-style: ${fStyle}; font-weight: ${fWeight}; text-decoration: ${tDec};`;
+        });
+    </script>
+
+</body>
+</html>

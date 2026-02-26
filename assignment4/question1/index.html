@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HashedBit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app" class="day">
+        <p>I am a HashedBit student, ready to become an awesome full stack developer</p>
+        
+        <button onclick="swapTheme()" id="swap" class="button_day">
+            Toggle theme
+        </button>
+    </div>
+
+    <script>
+
+        function swapTheme() {
+            const appElement = document.getElementById('app');
+            const buttonElement = document.getElementById('swap');
+
+            if (appElement.className === "day") {
+                appElement.className = "night";
+                buttonElement.className = "button_night";
+            } else {
+                appElement.className = "day";
+                buttonElement.className = "button_day";
+            }
+        }
+    </script>
+
+</body>
+</html>
